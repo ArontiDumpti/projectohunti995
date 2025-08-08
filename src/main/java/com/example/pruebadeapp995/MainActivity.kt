@@ -12,6 +12,12 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
 import com.example.pruebadeapp995.ui.theme.Pruebadeapp995Theme
+import androidx.compose.foundation.Image
+import androidx.compose.ui.res.painterResource
+import androidx.compose.ui.res.vectorResource
+import androidx.compose.ui.unit.dp
+import androidx.compose.ui.layout.ContentScale
+
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -19,7 +25,7 @@ class MainActivity : ComponentActivity() {
         enableEdgeToEdge()
         setContent {
             Pruebadeapp995Theme {
-                Scaffold(modifier = Modifier.fillMaxSize()) { innerPadding ->
+                Scaffold(modifier = Modifier.fillMaxSize()) {   innerPadding ->
                     Greeting(
                         name = "1",
                         modifier = Modifier.padding(innerPadding)
@@ -36,12 +42,11 @@ fun Greeting(name: String, modifier: Modifier = Modifier) {
         text = "Hello $name!",
         modifier = modifier
     )
-}
 
-@Preview(showBackground = true)
-@Composable
-fun GreetingPreview() {
-    Pruebadeapp995Theme {
-        Greeting("Android")
-    }
+    Image(
+        painter = painterResource(id = R.drawable.galletaloca24), // reemplaza con tu nombre real
+        contentDescription = "Logo"
+    )
+
+
 }
